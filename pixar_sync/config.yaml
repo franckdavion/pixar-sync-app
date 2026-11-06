@@ -1,0 +1,30 @@
+name: "Pixar — Synchronisation GitHub"
+slug: "pixar_sync"
+url: "https://github.com/franckdavion/pixar-sync-app"
+description: "Synchronise Pixar V2, l'automatisation de recharge Lenovo et le tableau de bord Pixar, avec sauvegardes."
+version: "0.4.1"
+arch:
+  - amd64
+  - aarch64
+homeassistant_api: true
+startup: application
+boot: auto
+init: false
+map:
+  - type: homeassistant_config
+    read_only: false
+    path: /homeassistant
+options:
+  enabled: false
+  github_token: ""
+  interval_minutes: 15
+  auto_resource_version: false
+  auto_automation_sync: true
+  auto_dashboard_sync: false
+schema:
+  enabled: bool
+  github_token: password
+  interval_minutes: "int(5,1440)"
+  auto_resource_version: bool
+  auto_automation_sync: bool
+  auto_dashboard_sync: bool
